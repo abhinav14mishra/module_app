@@ -12,7 +12,7 @@ resource "aws_default_vpc" "default" {
 }
 
 resource "aws_security_group" "my_security_group" {
-  name        = "Terraform_Automate"
+  name        = "${var.env}-infra-app-sg"
   description = "Sample Security Group for EC2 Instance"
   vpc_id      = aws_default_vpc.default.id
 
